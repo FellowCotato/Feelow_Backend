@@ -18,10 +18,10 @@ import java.util.stream.Collectors;
 public class ItemService {
 
     @Autowired
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
 
     @Autowired
-    private ItemTypeRepository itemTypeRepository;
+    private final ItemTypeRepository itemTypeRepository;
 
 
     public void uploadItem(ItemDto itemDto){

@@ -9,9 +9,9 @@ import lombok.val;
 @Getter
 public class Money {
 
-    private int value;
+    private Integer value;
 
-    public Money(int value){
+    public Money(Integer value){
         this.value = value;
     }
     public Money(){this.value = 100;}

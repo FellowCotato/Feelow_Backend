@@ -21,7 +21,7 @@ public class Item {
 
     @Id
     @JsonProperty("itemId")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long itemId;
 
     @JsonProperty("name")
@@ -42,11 +42,11 @@ public class Item {
 
     @CreationTimestamp
     @JsonProperty("created_at")
-    private LocalDateTime createdAt;
+    private LocalDateTime created_at;
 
     @UpdateTimestamp
     @JsonProperty("updated_at")
-    private LocalDateTime updateAt;
+    private LocalDateTime updated_at;
 
     public static Item createItem(ItemDto itemDto){
         return new Item(
@@ -55,18 +55,18 @@ public class Item {
                 itemDto.getTypeId(),
                 itemDto.getIntro(),
                 itemDto.getPrice(),
-                itemDto.getCreatedAt(),
-                itemDto.getUpdateAt()
+                itemDto.getCreated_at(),
+                itemDto.getUpdated_at()
         );
     }
 
-/*
+
+
     public Item(String name, Money price) {
         this.name = name;
         this.price = price;
     }
 
- */
 
     /*
     public Item(String name, Long price){
@@ -76,7 +76,7 @@ public class Item {
 */
     // 아이템 생성 요청을 받으면 아이템 객체를 생성해서 반환
 
-    /*
+
 
     public static Item of(ItemCreateRequest request){
         return new Item(request.getName(), request.getPrice());
@@ -86,5 +86,5 @@ public class Item {
         return Money.of(price.getValue()*quantity);
     }
 
-*/
+
 }
