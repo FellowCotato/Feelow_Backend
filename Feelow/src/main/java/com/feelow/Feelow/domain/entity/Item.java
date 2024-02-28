@@ -33,14 +33,12 @@ public class Item {
     @JsonProperty("intro")
     private String intro;
 
-    @Embedded
-    @Column(nullable=false)
-    @JsonProperty("price")
-    private Money price = new Money();
-
-    //@Column(nullable = false)
     //@JsonProperty("price")
-    //private Long price;
+    //private Money price;
+
+    @Column(nullable = false)
+    @JsonProperty("price")
+    private Long price;
 
     @CreationTimestamp
     @JsonProperty("created_at")
