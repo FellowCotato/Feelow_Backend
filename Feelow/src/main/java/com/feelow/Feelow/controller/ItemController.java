@@ -4,7 +4,6 @@ import com.feelow.Feelow.domain.dto.ItemDto;
 import com.feelow.Feelow.repository.ItemTypeRepository;
 import com.feelow.Feelow.service.ItemService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

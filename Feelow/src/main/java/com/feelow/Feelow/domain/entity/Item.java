@@ -20,25 +20,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Item {
 
     @Id
-    @JsonProperty("itemId")
+    @JsonProperty("item_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long itemId;
 
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("typeId")
+    @JsonProperty("type_id")
     private Long typeId;
 
     @JsonProperty("intro")
     private String intro;
 
-    //@JsonProperty("price")
-    //private Money price;
-
-    @Column(nullable = false)
+    @Column(nullable=false)
     @JsonProperty("price")
-    private Long price;
+    private Long price; // 단일 값으로 변경
 
     @CreationTimestamp
     @JsonProperty("created_at")
@@ -62,7 +59,7 @@ public class Item {
 
 
 
-    public Item(String name, Money price) {
+    public Item(String name, Long price) {
         this.name = name;
         this.price = price;
     }
@@ -77,7 +74,7 @@ public class Item {
     // 아이템 생성 요청을 받으면 아이템 객체를 생성해서 반환
 
 
-
+/*
     public static Item of(ItemCreateRequest request){
         return new Item(request.getName(), request.getPrice());
     }
@@ -85,6 +82,6 @@ public class Item {
     public Money calculate(int quantity){
         return Money.of(price.getValue()*quantity);
     }
-
+*/
 
 }

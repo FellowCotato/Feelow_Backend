@@ -8,7 +8,7 @@ import lombok.val;
 @Embeddable
 @Getter
 public class Money {
-
+/*
     private Integer value;
 
     public Money(Integer value){
@@ -19,5 +19,7 @@ public class Money {
     public static Money of(Integer value){
         return new Money(value);
     }
+    
+ */
 
 }

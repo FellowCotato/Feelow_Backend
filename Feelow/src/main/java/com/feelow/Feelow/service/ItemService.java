@@ -46,13 +46,18 @@ public class ItemService {
 
     }
 
-    private Item convertDtoToEntity(ItemDto itemDto){
+    private Item convertDtoToEntity(ItemDto itemNDto){
         return Item.builder()
-                .name(itemDto.getName())
-                .typeId(itemDto.getTypeId())
-                .intro(itemDto.getIntro())
+                .name(itemNDto.getName())
+                .typeId(itemNDto.getTypeId())
+                .intro(itemNDto.getIntro())
+                .price(itemNDto.getPrice())
+                .itemId(itemNDto.getItemId())
+                .created_at(itemNDto.getCreated_at())
+                .updated_at(itemNDto.getUpdated_at())
                 .build();
     }
+
 
     private ItemDto convertEntityToDto(Item item){
         return ItemDto.builder()
@@ -60,6 +65,10 @@ public class ItemService {
                 .name(item.getName())
                 .typeId(item.getTypeId())
                 .intro(item.getIntro())
+                .price(item.getPrice())
+                .itemId(item.getItemId())
+                .created_at(item.getCreated_at())
+                .updated_at(item.getUpdated_at())
                 .build();
     }
 
