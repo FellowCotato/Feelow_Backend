@@ -10,7 +10,7 @@ public interface ItemTypeRepository extends JpaRepository<ItemType, Long> {
 
     ItemType findByTypeId(Long typeId);
 
-    @Query(value = "SELECT * FROM ItemType WHERE type_id = (SELECT type_id FROM Item WEHRE item_id=:itemId)", nativeQuery = true)
+    @Query(value = "SELECT * FROM item_type WHERE type_id = (SELECT type_id FROM item WHERE item_id=:itemId)", nativeQuery = true)
     ItemType findByItemId(@Param("itemId") Long itemId);
 
 }

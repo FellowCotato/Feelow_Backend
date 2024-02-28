@@ -17,11 +17,10 @@ public class ItemDto {
     private String name; // 아이템 이름
     private Long typeId; // ItemType 외래키
     private String intro; // 아이템 소개
-    //private Money price; // 아이템 가격
-    private Long price;
-    private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
+    private Money price; // 아이템 가격
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
 
-    public Item toEntity() {return new Item(itemId, name, typeId, intro, price, createdAt, updateAt);}
+    public Item toEntity() {return new Item(itemId, name, typeId, intro, price, created_at, updated_at);}
 
 }

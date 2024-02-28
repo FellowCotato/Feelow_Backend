@@ -26,9 +26,9 @@ public class ItemTypeController {
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
-    @GetMapping("/{itemTypeId}") // 특정 아이템 타입 매핑
-    public ResponseEntity<ItemType> getItemType(@PathVariable Long itemTypeId){
-        ItemType itemType = itemTypeService.getItemType(itemTypeId);
+    @GetMapping("/{itemId}") // 특정 아이템 타입 매핑
+    public ResponseEntity<ItemType> getItemType(@PathVariable("itemId") Long itemId){
+        ItemType itemType = itemTypeService.getItemType(itemId);
         return (itemType != null)?
                 ResponseEntity.status(HttpStatus.OK).body(itemType):
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
